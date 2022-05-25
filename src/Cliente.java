@@ -1,34 +1,35 @@
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.net.Socket;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.Scanner;
 
 public class Cliente {
-  public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
+        Scanner sn = new Scanner(System.in);
+        sn.useDelimiter("\n");
 
-    final String HOST = "127.0.0.1";
-    final int PUERTO = 5000;
-    DataInputStream in;
-    DataOutputStream out;
+        try {
+            Socket sc = new Socket("127.0.0.1", 5000);
 
-    try {
-      Socket sc = new Socket(HOST, PUERTO);
+            DataInputStream in = new DataInputStream(sc.getInputStream());
+            DataOutputStream out = new DataOutputStream(sc.getOutputStream());
 
-      in = new DataInputStream(sc.getInputStream());
-      out = new DataOutputStream(sc.getOutputStream());
+            String mensaje = in.readUTF();
+            System.out.println(mensaje);
+            
+            String nombre = sn.next();
+            out.writeUTF(nombre);
 
-      out.writeUTF("Hola mundo desde cliente");
+            ClienteHilo hilo = new ClienteHilo(in, out);
+            hilo.start();
+            hilo.join();
 
-      String mensaje = in.readUTF();
-
-      System.out.println(mensaje);
-
-    } catch (IOException ex) {
-      Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
-
-  }
 }
