@@ -1,0 +1,11 @@
+Area: sistemas
+Area: Redes
+Area: 
+Area: 
+Area: limpieza
+Area: limpieza
+Area: Directivos
+Area: Cuarto Frio
+Area: sindicato
+Area: contadores
+Area: produccion

@@ -1,8 +1,8 @@
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,17 +22,21 @@ public class Servidor {
             DataInputStream in = new DataInputStream(sc.getInputStream());
             DataOutputStream out = new DataOutputStream(sc.getOutputStream());
 
-            out.writeUTF("Indica tu nombre");
+            out.writeUTF("Servidor: Indica tu nombre");
             String nombreCliente = in.readUTF();
 
-            ServidorHilo hilo = new ServidorHilo(in, out, nombreCliente);
+            ServidorHilo hilo = new ServidorHilo(sc, in, out, nombreCliente);
             hilo.start();
             
-            System.out.println("Creada la coneccion con el cliente "+nombreCliente);
+            System.out.println("Creada la conexion con el cliente: "+nombreCliente);
             }
+            
+            
+           
         } catch (IOException ex) {
             Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
+    
 }
