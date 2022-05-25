@@ -30,6 +30,6 @@ public class Cliente {
         } catch (IOException ex) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
 }
