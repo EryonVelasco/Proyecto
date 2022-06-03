@@ -1,21 +1,20 @@
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-# EryonVelasco
-# EryonVelasco
 # Proyecto
+Cliente-Servidor
+
+# Tema
+Somos una empresa encargada del gestionamiento de empleados y sus areas de trabajo en base de datos (Archivos), Se puede realizar la contratacion de empleados asi como la creacion de nuevas areas de trabajo al igual que las bajas de los empleados inactivos  y/o areas fuera de servicio,ademas, Realizar una consulta total de los empleados contratados , modificar datos del empleado y areas.
+
+# Colaboradores
+Brandon Amaya Nava    
+
+
+Eryon Velasco Fernandez
+
+## Institucion donde se realizo el proyecto
+
+Instituto Tecnologico de Mexicali
+
+# Modo de Ejecucion
+Como el proyecto es un modelo cliente servidor es necesario abrir los dos proyectos individualmente para que estos hagan una conexion, ya sea abriendo tu IDE 2 veces o 2 terminales.
+Se debe ejecutar Servidor primero para al momento de ejecutar cliente tenga con quien comunicarse.
+
